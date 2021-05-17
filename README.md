@@ -13,18 +13,18 @@ I have followed below approach to create Elasticsearch(ES) node on EC2. As this 
 
 ## Q & A
 1. What did you choose to automate the provisioning and bootstrapping of the instance? Why?
-  *Ans* I have chosen Terraform AWS provide as I have worked before in provisioning EC2 instances using terraform using AWS RHEL/Ubuntu AMIs.
+  > I have chosen Terraform AWS provide as I have worked before in provisioning EC2 instances using terraform using AWS RHEL/Ubuntu AMIs.
 2. How did you choose to secure ElasticSearch? Why?
-  *Ans* Used AWSESAdmin IAM role to secure ElasticSearch accessing using endpoint.
+  > Used AWSESAdmin IAM role to secure ElasticSearch accessing using endpoint.
 3. How would you monitor this instance? What metrics would you monitor?
-  *Ans* Will monitor memory, disk usage CPU utilization and statuscheck of the application using CloudWatch.
+  > Will monitor memory, disk usage CPU utilization and statuscheck of the application using CloudWatch.
 4. Could you extend your solution to launch a secure cluster of ElasticSearch nodes? What
 would need to change to support this use case?
-  *Ans* Need to enable node-to-node encryption for master and nodes which uses TLS 1.2 protocol. We can also block specific IP addresses that can restrict connecting to the cluster.
+  > Need to enable node-to-node encryption for master and nodes which uses TLS 1.2 protocol. We can also block specific IP addresses that can restrict connecting to the cluster.
 5. Could you extend your solution to replace a running ElasticSearch instance with little or no
 downtime? How?
-  *Ans* We can do a rolling upgrade and test node by node. If it's in one node, take snapshot backup of old instance and put it in upgraded version and do reindexing, if all look good with the new version, enable read/write mode to new version and remove the old one.
+  > We can do a rolling upgrade and test node by node. If it's in one node, take snapshot backup of old instance and put it in upgraded version and do reindexing, if all look good with the new version, enable read/write mode to new version and remove the old one.
 6. Was it a priority to make your code well structured, extensible, and reusable?
-  *Ans* Yes, this will help and save time to other developers who can use the same code and develop according to their own use cases.
+  > Yes, this will help and save time to other developers who can use the same code and develop according to their own use cases.
 7. What sacrifices did you make due to time?
-  *Ans* Spent more on debugging issues rather than actually developing.
+  > Spent more on debugging issues rather than actually developing.
